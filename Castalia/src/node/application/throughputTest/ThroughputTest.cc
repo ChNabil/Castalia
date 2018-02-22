@@ -46,7 +46,7 @@ void ThroughputTest::fromNetworkLayer(ApplicationPacket * rcvPacket,
 	// This node is the final recipient for the packet
 	if (recipientAddress.compare(SELF_NETWORK_ADDRESS) == 0) {
 		if (delayLimit == 0 || (simTime() - rcvPacket->getCreationTime()) <= delayLimit) { 
-			trace() << "Received packet #" << sequenceNumber << " from node " << source;
+			trace() << "Received packet #" << sequenceNumber << " frm node " << source;
 			collectOutput("Packets received per node", sourceId);
 			packetsReceived[sourceId]++;
 			bytesReceived[sourceId] += rcvPacket->getByteLength();
